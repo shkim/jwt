@@ -251,7 +251,8 @@ func verifyIat(iat *time.Time, now time.Time, required bool) bool {
 	if iat == nil {
 		return !required
 	}
-	return now.After(*iat) || now.Equal(*iat)
+	// shkim: temporarily disables IAT check
+	return true //now.After(*iat) || now.Equal(*iat)
 }
 
 func verifyNbf(nbf *time.Time, now time.Time, required bool) bool {

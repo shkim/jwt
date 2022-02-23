@@ -1,3 +1,4 @@
+//go:build go1.4
 // +build go1.4
 
 package jwt_test
@@ -9,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/golang-jwt/jwt/v4"
-	"github.com/golang-jwt/jwt/v4/test"
+	"github.com/shkim/jwt/v4"
+	"github.com/shkim/jwt/v4/test"
 )
 
 var rsaPSSTestData = []struct {

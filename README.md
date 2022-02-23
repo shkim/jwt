@@ -1,11 +1,11 @@
 # jwt-go
 
-[![build](https://github.com/golang-jwt/jwt/actions/workflows/build.yml/badge.svg)](https://github.com/golang-jwt/jwt/actions/workflows/build.yml)
-[![Go Reference](https://pkg.go.dev/badge/github.com/golang-jwt/jwt/v4.svg)](https://pkg.go.dev/github.com/golang-jwt/jwt/v4)
+[![build](https://github.com/shkim/jwt/actions/workflows/build.yml/badge.svg)](https://github.com/shkim/jwt/actions/workflows/build.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/shkim/jwt/v4.svg)](https://pkg.go.dev/github.com/shkim/jwt/v4)
 
 A [go](http://www.golang.org) (or 'golang' for search engine friendliness) implementation of [JSON Web Tokens](https://datatracker.ietf.org/doc/html/rfc7519).
 
-Starting with [v4.0.0](https://github.com/golang-jwt/jwt/releases/tag/v4.0.0) this project adds Go module support, but maintains backwards compatibility with older `v3.x.y` tags and upstream `github.com/dgrijalva/jwt-go`.
+Starting with [v4.0.0](https://github.com/shkim/jwt/releases/tag/v4.0.0) this project adds Go module support, but maintains backwards compatibility with older `v3.x.y` tags and upstream `github.com/dgrijalva/jwt-go`.
 See the [`MIGRATION_GUIDE.md`](./MIGRATION_GUIDE.md) for more information.
 
 > After the original author of the library suggested migrating the maintenance of `jwt-go`, a dedicated team of open source maintainers decided to clone the existing library into this repository. See [dgrijalva/jwt-go#462](https://github.com/dgrijalva/jwt-go/issues/462) for a detailed discussion on this topic.
@@ -38,15 +38,15 @@ This library supports the parsing and verification as well as the generation and
 
 ## Examples
 
-See [the project documentation](https://pkg.go.dev/github.com/golang-jwt/jwt) for examples of usage:
+See [the project documentation](https://pkg.go.dev/github.com/shkim/jwt) for examples of usage:
 
-* [Simple example of parsing and validating a token](https://pkg.go.dev/github.com/golang-jwt/jwt#example-Parse-Hmac)
-* [Simple example of building and signing a token](https://pkg.go.dev/github.com/golang-jwt/jwt#example-New-Hmac)
-* [Directory of Examples](https://pkg.go.dev/github.com/golang-jwt/jwt#pkg-examples)
+* [Simple example of parsing and validating a token](https://pkg.go.dev/github.com/shkim/jwt#example-Parse-Hmac)
+* [Simple example of building and signing a token](https://pkg.go.dev/github.com/shkim/jwt#example-New-Hmac)
+* [Directory of Examples](https://pkg.go.dev/github.com/shkim/jwt#pkg-examples)
 
 ## Extensions
 
-This library publishes all the necessary components for adding your own signing methods.  Simply implement the `SigningMethod` interface and register a factory method using `RegisterSigningMethod`. 
+This library publishes all the necessary components for adding your own signing methods.  Simply implement the `SigningMethod` interface and register a factory method using `RegisterSigningMethod`.
 
 A common use case would be integrating with different 3rd party signature providers, like key management services from various cloud providers or Hardware Security Modules (HSMs).
 
@@ -67,9 +67,9 @@ This library was last reviewed to comply with [RFC 7519](https://datatracker.iet
 
 This library is considered production ready.  Feedback and feature requests are appreciated.  The API should be considered stable.  There should be very few backwards-incompatible changes outside of major version updates (and only with good reason).
 
-This project uses [Semantic Versioning 2.0.0](http://semver.org).  Accepted pull requests will land on `main`.  Periodically, versions will be tagged from `main`.  You can find all the releases on [the project releases page](https://github.com/golang-jwt/jwt/releases).
+This project uses [Semantic Versioning 2.0.0](http://semver.org).  Accepted pull requests will land on `main`.  Periodically, versions will be tagged from `main`.  You can find all the releases on [the project releases page](https://github.com/shkim/jwt/releases).
 
-**BREAKING CHANGES:*** 
+**BREAKING CHANGES:***
 A full list of breaking changes is available in `VERSION_HISTORY.md`.  See `MIGRATION_GUIDE.md` for more information on updating your code.
 
 ## Usage Tips
@@ -95,10 +95,10 @@ Asymmetric signing methods, such as RSA, use different keys for signing and veri
 
 Each signing method expects a different object type for its signing keys. See the package documentation for details. Here are the most common ones:
 
-* The [HMAC signing method](https://pkg.go.dev/github.com/golang-jwt/jwt#SigningMethodHMAC) (`HS256`,`HS384`,`HS512`) expect `[]byte` values for signing and validation
-* The [RSA signing method](https://pkg.go.dev/github.com/golang-jwt/jwt#SigningMethodRSA) (`RS256`,`RS384`,`RS512`) expect `*rsa.PrivateKey` for signing and `*rsa.PublicKey` for validation
-* The [ECDSA signing method](https://pkg.go.dev/github.com/golang-jwt/jwt#SigningMethodECDSA) (`ES256`,`ES384`,`ES512`) expect `*ecdsa.PrivateKey` for signing and `*ecdsa.PublicKey` for validation
-* The [EdDSA signing method](https://pkg.go.dev/github.com/golang-jwt/jwt#SigningMethodEd25519) (`Ed25519`) expect `ed25519.PrivateKey` for signing and `ed25519.PublicKey` for validation
+* The [HMAC signing method](https://pkg.go.dev/github.com/shkim/jwt#SigningMethodHMAC) (`HS256`,`HS384`,`HS512`) expect `[]byte` values for signing and validation
+* The [RSA signing method](https://pkg.go.dev/github.com/shkim/jwt#SigningMethodRSA) (`RS256`,`RS384`,`RS512`) expect `*rsa.PrivateKey` for signing and `*rsa.PublicKey` for validation
+* The [ECDSA signing method](https://pkg.go.dev/github.com/shkim/jwt#SigningMethodECDSA) (`ES256`,`ES384`,`ES512`) expect `*ecdsa.PrivateKey` for signing and `*ecdsa.PublicKey` for validation
+* The [EdDSA signing method](https://pkg.go.dev/github.com/shkim/jwt#SigningMethodEd25519) (`Ed25519`) expect `ed25519.PrivateKey` for signing and `ed25519.PublicKey` for validation
 
 ### JWT and OAuth
 
@@ -116,7 +116,7 @@ This library uses descriptive error messages whenever possible. If you are not g
 
 ## More
 
-Documentation can be found [on pkg.go.dev](https://pkg.go.dev/github.com/golang-jwt/jwt).
+Documentation can be found [on pkg.go.dev](https://pkg.go.dev/github.com/shkim/jwt).
 
 The command line utility included in this project (cmd/jwt) provides a straightforward example of token creation and parsing as well as a useful tool for debugging your own integration. You'll also find several implementation examples in the documentation.
 

@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/golang-jwt/jwt/v4"
-	"github.com/golang-jwt/jwt/v4/test"
+	"github.com/shkim/jwt/v4"
+	"github.com/shkim/jwt/v4/test"
 )
 
 var errKeyFuncError error = fmt.Errorf("error loading key")
